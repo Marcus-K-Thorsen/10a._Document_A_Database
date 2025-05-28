@@ -23,6 +23,17 @@ Or to do the same without the dump_mysql.py script, within a **GitBash** termina
 $ mysqldump --user=<username> --password=<user_password> --host=localhost --port=3306 --no-tablespaces kea_cars_dev > mysql-dump/dump_$(date +%s).sql
 ```
 
+How to dump my MongoDB database of kea_cars_customer_dev, within a **GitBash** terminal:
+
+```bash
+$ mongodump --uri="mongodb://adminUser:adminPassword@localhost:27017/kea_cars_customer_dev?authSource=admin" --out=backup_folder
+```
+
+To restore the MongoDB datase kea_cars_customer_dev, use this command:
+
+```bash
+$ mongorestore --uri="mongodb://adminUser:adminPassword@localhost:27017/kea_cars_customer_dev?authSource=admin" backup_folder/kea_cars_customer_dev
+```
 
 # EER Diagram Documentation
 
