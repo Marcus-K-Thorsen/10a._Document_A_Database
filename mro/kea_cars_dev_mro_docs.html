@@ -66,7 +66,7 @@
         <h2 class="database-table-name">accessories</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -75,15 +75,15 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>name</td><td>varchar(60)</td><td>UNI</td><td></td>
+                    <td>name</td><td>varchar(60)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>price</td><td>double unsigned</td><td></td><td></td>
+                    <td>price</td><td>double unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
     
@@ -93,7 +93,7 @@
         <h2 class="database-table-name">brands</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -102,15 +102,15 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>name</td><td>varchar(60)</td><td>UNI</td><td></td>
+                    <td>name</td><td>varchar(60)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>logo_url</td><td>varchar(255)</td><td></td><td></td>
+                    <td>logo_url</td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
     
@@ -120,7 +120,7 @@
         <h2 class="database-table-name">car_purchase_view</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -129,23 +129,23 @@
     
             
                 <tr>
-                    <td>car_id</td><td>char(36)</td><td></td>
+                    <td>car_id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>purchase_id</td><td>char(36)</td><td></td>
+                    <td>purchase_id</td><td>char(36)</td><td>uuid()</td><td>YES</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>sales_person_id</td><td>char(36)</td><td></td>
+                    <td>sales_person_id</td><td>char(36)</td><td></td><td>NO</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>customer_id</td><td>char(36)</td><td></td>
+                    <td>customer_id</td><td>char(36)</td><td></td><td>NO</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>is_past_deadline</td><td>tinyint(1)</td><td></td>
+                    <td>is_past_deadline</td><td>tinyint(1)</td><td></td><td>YES</td><td></td><td>Number</td><td></td>
                 </tr>
                 
     
@@ -155,7 +155,7 @@
         <h2 class="database-table-name">cars</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -164,31 +164,31 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>models_id</td><td>char(36)</td><td>MUL</td><td>models.id</td>
+                    <td>models_id</td><td>char(36)</td><td></td><td>NO</td><td>MUL</td><td></td><td>String</td><td>models.id</td>
                 </tr>
                 
                 <tr>
-                    <td>colors_id</td><td>char(36)</td><td>MUL</td><td>colors.id</td>
+                    <td>colors_id</td><td>char(36)</td><td></td><td>NO</td><td>MUL</td><td></td><td>String</td><td>colors.id</td>
                 </tr>
                 
                 <tr>
-                    <td>customers_id</td><td>char(36)</td><td>MUL</td><td>customers.id</td>
+                    <td>customers_id</td><td>char(36)</td><td></td><td>NO</td><td>MUL</td><td></td><td>String</td><td>customers.id</td>
                 </tr>
                 
                 <tr>
-                    <td>sales_people_id</td><td>char(36)</td><td>MUL</td><td>sales_people.id</td>
+                    <td>sales_people_id</td><td>char(36)</td><td></td><td>NO</td><td>MUL</td><td></td><td>String</td><td>sales_people.id</td>
                 </tr>
                 
                 <tr>
-                    <td>total_price</td><td>double unsigned</td><td></td><td></td>
+                    <td>total_price</td><td>double unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>purchase_deadline</td><td>date</td><td></td><td></td>
+                    <td>purchase_deadline</td><td>date</td><td></td><td>NO</td><td></td><td></td><td>Date</td><td></td>
                 </tr>
                 
     
@@ -198,7 +198,7 @@
         <h2 class="database-table-name">cars_has_accessories</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>null</th><th>key</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -207,11 +207,11 @@
     
             
                 <tr>
-                    <td>cars_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>cars_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>accessories_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>accessories_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
     
@@ -221,7 +221,7 @@
         <h2 class="database-table-name">cars_has_insurances</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>null</th><th>key</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -230,11 +230,11 @@
     
             
                 <tr>
-                    <td>cars_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>cars_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>insurances_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>insurances_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
     
@@ -244,7 +244,7 @@
         <h2 class="database-table-name">colors</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -253,27 +253,27 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>name</td><td>varchar(45)</td><td>UNI</td><td></td>
+                    <td>name</td><td>varchar(45)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>price</td><td>double unsigned</td><td></td><td></td>
+                    <td>price</td><td>double unsigned</td><td>0</td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>red_value</td><td>tinyint unsigned</td><td></td><td></td>
+                    <td>red_value</td><td>tinyint unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>green_value</td><td>tinyint unsigned</td><td></td><td></td>
+                    <td>green_value</td><td>tinyint unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>blue_value</td><td>tinyint unsigned</td><td></td><td></td>
+                    <td>blue_value</td><td>tinyint unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
     
@@ -283,7 +283,7 @@
         <h2 class="database-table-name">customers</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -292,27 +292,27 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>email</td><td>varchar(100)</td><td>UNI</td><td></td>
+                    <td>email</td><td>varchar(100)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>phone_number</td><td>varchar(30)</td><td></td><td></td>
+                    <td>phone_number</td><td>varchar(30)</td><td></td><td>YES</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>first_name</td><td>varchar(45)</td><td></td><td></td>
+                    <td>first_name</td><td>varchar(45)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>last_name</td><td>varchar(45)</td><td></td><td></td>
+                    <td>last_name</td><td>varchar(45)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>address</td><td>varchar(255)</td><td></td><td></td>
+                    <td>address</td><td>varchar(255)</td><td></td><td>YES</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
     
@@ -322,7 +322,7 @@
         <h2 class="database-table-name">insurances</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -331,15 +331,15 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>name</td><td>varchar(45)</td><td>UNI</td><td></td>
+                    <td>name</td><td>varchar(45)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>price</td><td>double unsigned</td><td></td><td></td>
+                    <td>price</td><td>double unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
     
@@ -349,7 +349,7 @@
         <h2 class="database-table-name">models</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -358,23 +358,23 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>brands_id</td><td>char(36)</td><td>MUL</td><td>brands.id</td>
+                    <td>brands_id</td><td>char(36)</td><td></td><td>NO</td><td>MUL</td><td></td><td>String</td><td>brands.id</td>
                 </tr>
                 
                 <tr>
-                    <td>name</td><td>varchar(60)</td><td></td><td></td>
+                    <td>name</td><td>varchar(60)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>price</td><td>double unsigned</td><td></td><td></td>
+                    <td>price</td><td>double unsigned</td><td></td><td>NO</td><td></td><td></td><td>Number</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>image_url</td><td>varchar(255)</td><td></td><td></td>
+                    <td>image_url</td><td>varchar(255)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
     
@@ -384,7 +384,7 @@
         <h2 class="database-table-name">models_has_colors</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>null</th><th>key</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -393,11 +393,11 @@
     
             
                 <tr>
-                    <td>models_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>models_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>colors_id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>colors_id</td><td>char(36)</td><td>NO</td><td>PRI</td><td>String</td><td></td>
                 </tr>
                 
     
@@ -407,7 +407,7 @@
         <h2 class="database-table-name">purchases</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -416,15 +416,15 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>cars_id</td><td>char(36)</td><td>UNI</td><td></td>
+                    <td>cars_id</td><td>char(36)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>date_of_purchase</td><td>date</td><td></td><td></td>
+                    <td>date_of_purchase</td><td>date</td><td></td><td>NO</td><td></td><td></td><td>Date</td><td></td>
                 </tr>
                 
     
@@ -434,7 +434,7 @@
         <h2 class="database-table-name">sales_people</h2>
         <table class="database-table-body">
             <tr>
-                <th>field</th><th>type</th><th>key</th><th>keyTo</th>                 
+                <th>field</th><th>type</th><th>default</th><th>null</th><th>key</th><th>extra</th><th>typeJS</th><th>keyTo</th>                 
             </tr>
     
         </tr>
@@ -443,23 +443,23 @@
     
             
                 <tr>
-                    <td>id</td><td>char(36)</td><td>PRI</td><td></td>
+                    <td>id</td><td>char(36)</td><td>uuid()</td><td>NO</td><td>PRI</td><td>DEFAULT_GENERATED</td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>email</td><td>varchar(100)</td><td>UNI</td><td></td>
+                    <td>email</td><td>varchar(100)</td><td></td><td>NO</td><td>UNI</td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>hashed_password</td><td>varchar(130)</td><td></td><td></td>
+                    <td>hashed_password</td><td>varchar(130)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>first_name</td><td>varchar(50)</td><td></td><td></td>
+                    <td>first_name</td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
                 <tr>
-                    <td>last_name</td><td>varchar(50)</td><td></td><td></td>
+                    <td>last_name</td><td>varchar(50)</td><td></td><td>NO</td><td></td><td></td><td>String</td><td></td>
                 </tr>
                 
     
